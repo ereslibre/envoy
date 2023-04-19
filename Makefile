@@ -5,7 +5,7 @@ bazel-bin/source/exe/envoy-static:
 .PHONY: local-server
 local-server:
 	sh -c 'pkill python3 || true'
-	sh -c 'nix run ~/projects/nixities#nixpkgs.python3 -- -m http.server 9000 &> /dev/null &'
+	sh -c 'nix run ~/projects/nixities#python3 -- -m http.server 9000 &> /dev/null &'
 
 .PHONY: run
 run: local-server bazel-bin/source/exe/envoy-static
